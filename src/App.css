@@ -1,0 +1,140 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 60px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.professor-img {
+  width: 100px;
+  height: 100px;
+  border: 4px solid #e3e3e3;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2);
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  flex: 0 1 100px;
+}
+
+.left-container {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.middle-container {
+  margin-left: 10px;
+  text-align: left;
+  flex: 2;
+}
+
+.top-container {
+  display: flex;
+}
+
+.right-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.curriculo-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+  display: inline;
+}
+
+.professor-disciplina {
+  display: inline-block;
+  border: 1px solid #ff8008;
+  background-color: transparent;
+  color: #ff8008;
+  padding: 3px 13px;
+  margin: 3px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.mb-10 {
+  margin-bottom: 1em;
+}
+
+.professor-nota {
+
+  display: inline-block;
+  font-size: 20px;
+  color: black;
+  margin-right: 5px;
+}
+
+#logo {
+  transform: scale(0.5);
+}
+
+.button {
+  background-color: #ff8008;
+  color: #fff !important;
+  border: 2px solid #ff8008;
+  font-size: 18px;
+  padding: 0px 10px;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: all .3s;
+  text-transform: none !important;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: #ff8008 !important;
+  border: 2px solid #ff8008;
+}
+
+.icon{
+  font-size: 1.5rem !important;
+}
+
+.card-title{
+  font-weight: 700 !important;
+}
