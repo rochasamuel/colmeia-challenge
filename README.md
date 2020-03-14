@@ -132,7 +132,9 @@ Aqui acontece a parte principal do sistema, por meio do componente `SearchQuery`
     }
 ```
 >Efeito desde trecho no sitema:
+
 ![gif](https://raw.githubusercontent.com/RochaSamuel/colmeia-challenge/master/readmeutils/gif2.gif)
+
 ![gif](https://raw.githubusercontent.com/RochaSamuel/colmeia-challenge/master/readmeutils/gif3.gif)
 
 * No retorno método `render()` deste componente, contém o input para a pesquisa, e, caso o array de professores tenha sido populado ocorre a chamada para o componenete `ViewQuery` passando o `state` atual , este tratará da visualização dos dados. 
