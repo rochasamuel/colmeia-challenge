@@ -13,10 +13,18 @@ O app consiste em um sistema de busca assíncrona, em que os resultados são atu
 Para visualizar o projeto em funcionamento é necessário ter o Node.js instalado na máquina.
 
 * No terminal navegue até a pasta raiz do projeto:
-`cd C:..\colmeia-challenge`
+
+  `cd C:..\colmeia-challenge`
 
 * Execute o comando: (roda o app em modo de desenvolvimento)
-`npm start`
+
+  `npm start`
+  
+  *A sída no console deve ser:*
+  
+  `>react-quickstart-example@0.1.0 start C:\Users\samuk\Desktop\colmeia\colmeia-challenge`
+  
+  `>react-scripts start`
 
 
 
@@ -26,4 +34,4 @@ Para visualizar o projeto em funcionamento é necessário ter o Node.js instalad
 const store = createStore(reducer);
 function reducer(state = [], action)
 { return 'x' };
-`
+``` -->
