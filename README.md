@@ -31,7 +31,7 @@ Para visualizar o projeto em funcionamento é necessário ter o Node.js instalad
 >_*O navegador deverá abrir uma janela automaticamente direcionando para o endereço `localhost:3000`. Caso não ocorra, basta abrir manualmente uma janela e colocar o endereço em questão.*_
 
 ### Componentes e métodos
-Os componente principais são 4: `App`, `SearchQuery`, `ViewQuery` e `Header`.
+Os arquivos principais são 4: `App.js`, `SearchQuery.js`, `ViewQuery.js` e `Header.js` dentro deles estão resididos os componentes e métodos principais.
 
 #### `Header.js`
 Este arquivo contém apenas um `function component` declarado ArrowFunction, ele não recebe nenhum parâmetro e retorna um conjunto de marcações HTLM formando o cabeçalho da página.
