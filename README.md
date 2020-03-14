@@ -26,4 +26,4 @@ Para visualizar o projeto em funcionamento é necessário ter o Node.js instalad
 const store = createStore(reducer);
 function reducer(state = [], action)
 { return 'x' };
-``` -->
+`
