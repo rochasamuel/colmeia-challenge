@@ -5,7 +5,7 @@ Aplicação construída com [ReactJs](https://pt-br.reactjs.org/) com o intuito 
 ## O que o App faz?
 O app consiste em um sistema de busca assíncrona, em que os resultados são atualizados conforme digitado na barra de pesquisa, resultados esses que são extraídos do servidor disponibilizado, hospedado na plataforma de banco de dados [Parse](https://parseplatform.org/) (Criado pelo Facebook e que atualmente é Open Source :heart:).
 
-![img](https://raw.githubusercontent.com/RochaSamuel/colmeia-challenge/master/system.gif)
+![img](https://raw.githubusercontent.com/RochaSamuel/colmeia-challenge/master/readmeutils/system.gif)
 
 ---
 
@@ -131,9 +131,94 @@ Aqui acontece a parte principal do sistema, por meio do componente `SearchQuery`
 
     }
 ```
+>Efeito desde trecho no sitema:
+![gif](https://raw.githubusercontent.com/RochaSamuel/colmeia-challenge/master/readmeutils/gif2.gif)
+![gif](https://raw.githubusercontent.com/RochaSamuel/colmeia-challenge/master/readmeutils/gif3.gif)
 
-![gif]()
+* No retorno método `render()` deste componente, contém o input para a pesquisa, e, caso o array de professores tenha sido populado ocorre a chamada para o componenete `ViewQuery` passando o `state` atual , este tratará da visualização dos dados. 
 
+```Node
+    render() {
+        const { search } = this.state;
+
+        return (
+            <div>
+                <div className="input-field col s4">
+                    <input id="search" type="text" name="search" value={search} onChange={this.escutadorDeInput} placeholder="Digite o nome do instrutor" />
+                </div>
+                {this.state.professores ? (
+                    <ViewQuery params={this.state} />
+                ) : (console.log('...'))}
+            </div>
+        );
+    }
+```
+
+#### `ViewQuery.js`
+Neste arquivo existe o componente `ViewQuery` e um `function component` chamado *`View`*. Eles que tratam da conversão de cada objeto da pesquisa em um card devidamente formatado (HTML) e estilizado (Materialize.css e CSS puro).
+
+* O `fucntion component` chamado `View` recebe o parâmetro `props` que contém o `state` do componente `SearchQuery` que foi enviado como parâmetro na chamada do mesmo. O código aplica as regras de negócio requisitadas e "converte" os resultados da comparação do parâmetro `search` das `props` com o parâmetro `nome` de cada `professor` no array de professores em cards estruturados e estilizados.
+
+```Node
+    const View = (props) => {
+    const cards = props.params.professores.map((professor, index) => {
+        if (props.params.search.toLowerCase() === professor.nome.toLowerCase().substr(0, props.params.search.length)) {
+            return (
+                <div className="col s6" key={index}>
+                    <div className="card grey lighten-5">
+                        <div className="card-content black-text">
+                            <div className="top-container">
+                                <div className="left-container">
+                                    <div className="professor-img ">
+                                        <img src={professor.imagem._url} alt="" className="circle img" />
+                                    </div>
+                                </div>
+                                <div className="middle-container">
+                                    <span className="card-title">{professor.nome}</span>
+                                    <p>Disciplinas:</p>
+                                    {professor.materia.map((item, index) => {
+                                        return (<div key={index} className="professor-disciplina">{item}</div>);
+                                    })}
+                                </div>
+                                <div className="right-container">
+                                    <div className="professor-nota">{professor.nota}<i className="tiny material-icons">star</i></div>
+                                </div>
+                            </div>
+                            <div className="curriculo-title">Currículo</div>
+                            <p>{professor.curriculo}</p>
+                        </div>
+                        <div className="card-action">
+                            <div className="top-container">
+                                <div className="left-container"><i className="tiny material-icons icon">location_on</i>{professor.bairro}</div>
+                                <div className="right-container">
+                                    <a className="button" href="/">Selecionar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        } else {
+            return <div key={index}></div>;
+        }
+    });
+    return (
+        <div className="row">{cards}</div>
+    );
+}
+```
+
+* No método `render()` do componente `ViewQuery` é chamado o function component `View` o que executa a finalização do objetivo do sistema.
+
+```Node
+    class ViewQuery extends Component {
+    render() {
+        return (
+            <View params={this.props.params} />
+        );
+    }
+}
+```
 <!-- ```javascript
 const store = createStore(reducer);
 function reducer(state = [], action)

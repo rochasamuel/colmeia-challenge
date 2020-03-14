@@ -49,7 +49,6 @@ const View = (props) => {
 
 class ViewQuery extends Component {
     render() {
-        // console.log(this.props.params)
         return (
             <View params={this.props.params} />
         );

@@ -47,7 +47,6 @@ class SearchQuery extends Component {
 
     render() {
         const { search } = this.state;
-        console.log(this.state)
 
         return (
             <div>
