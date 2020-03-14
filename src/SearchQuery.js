@@ -3,7 +3,7 @@ import Parse from 'parse';
 import ViewQuery from './ViewQuery';
 
 
-class Search extends Component {
+class SearchQuery extends Component {
     constructor(props) {
         super(props)
 
@@ -18,7 +18,6 @@ class Search extends Component {
 
     state = {
         search: '',
-        loading: true,
         professores: null
     };
 
@@ -29,7 +28,6 @@ class Search extends Component {
         var professoresArray = resultArray.map(item => item.attributes);
         this.setState({
             professores: professoresArray,
-            loading: false
         });
 
         // console.log(this.state + 'primeiro');
@@ -49,6 +47,7 @@ class Search extends Component {
 
     render() {
         const { search } = this.state;
+        console.log(this.state)
 
         return (
             <div>
@@ -63,4 +62,4 @@ class Search extends Component {
     }
 }
 
-export default Search
+export default SearchQuery

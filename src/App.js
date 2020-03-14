@@ -3,7 +3,7 @@ import './App.css';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import Header from './Header';
-import Search from './SearchQuery';
+import SearchQuery from './SearchQuery';
 
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
       <Fragment>
         <Header />
         <div className="container">
-          <Search />
+          <SearchQuery />
         </div>
       </Fragment>
     );
