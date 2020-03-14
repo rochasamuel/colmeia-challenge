@@ -1,4 +1,29 @@
-## Desafio Colmeia
-Aplicação com o intuito de cumprir o desafio proposto pela [Colmeia] no âmbito do processo seletivo para estágio
+# Colmeia Challenge
+---
+Aplicação construída com [ReactJs](https://pt-br.reactjs.org/) com o intuito de cumprir o desafio proposto pela [Colmeia](https://aulascolmeia.com.br) no âmbito do processo seletivo para estágio.
 
-In this repository you will find an example app with all steps covered at [Back4App's React Quick Start Example](https://www.back4app.com/docs/react/react-templates) documentation.
+## O que o App faz?
+O app consiste em um sistema de busca assíncrona, em que os resultados são atualizados conforme digitado na barra de pesquisa, resultados esses que são extraídos do servidor disponibilizado, hospedado na plataforma de banco de dados [Parse](https://parseplatform.org/) (Criado pelo Facebook e que atualmente é Open Source :heart:).
+
+![img](https://raw.githubusercontent.com/RochaSamuel/colmeia-challenge/master/system.gif)
+
+---
+
+### Visualizar projeto
+Para visualizar o projeto em funcionamento é necessário ter o Node.js instalado na máquina.
+
+* No terminal navegue até a pasta raiz do projeto:
+`cd C:..\colmeia-challenge`
+
+* Execute o comando: (roda o app em modo de desenvolvimento)
+`npm start`
+
+
+
+>_*O navegador deverá abrir uma janela automaticamente direcionando para o endereço `localhost:3000`. Caso não ocorra, basta abrir manualmente uma janela e colocar o endereço em questão.*_
+
+<!-- ```javascript
+const store = createStore(reducer);
+function reducer(state = [], action)
+{ return 'x' };
+``` -->
