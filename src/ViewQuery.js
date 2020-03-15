@@ -47,6 +47,7 @@ const View = (props) => {
     );
 }
 
+
 class ViewQuery extends Component {
     render() {
         return (
