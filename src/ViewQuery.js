@@ -4,7 +4,7 @@ const View = (props) => {
     const cards = props.params.professores.map((professor, index) => {
         if (props.params.search.toLowerCase() === professor.nome.toLowerCase().substr(0, props.params.search.length)) {
             return (
-                <div className="col s6" key={index}>
+                <div className="col s6 card-resp" key={index}>
                     <div className="card grey lighten-5">
                         <div className="card-content black-text">
                             <div className="top-container">

@@ -131,10 +131,16 @@
   border: 2px solid #ff8008;
 }
 
-.icon{
+.icon {
   font-size: 1.5rem !important;
 }
 
-.card-title{
+.card-title {
   font-weight: 700 !important;
+}
+
+@media (max-width: 1097px) {
+  .card-resp {
+    width: 100% !important;
+  }
 }
