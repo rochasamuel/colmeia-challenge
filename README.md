@@ -20,9 +20,9 @@ Para visualizar o projeto em funcionamento é necessário ter o Node.js instalad
 
   `npm start`
   
-  *A sída no console deve ser:*
+  *A saída no console deve ser:*
   
-  `>react-quickstart-example@0.1.0 start C:\Users\samuk\Desktop\colmeia\colmeia-challenge`
+  `>react-quickstart-example@0.1.0 start C:\...\colmeia-challenge`
   
   `>react-scripts start`
 
@@ -31,10 +31,12 @@ Para visualizar o projeto em funcionamento é necessário ter o Node.js instalad
 >_*O navegador deverá abrir uma janela automaticamente direcionando para o endereço `localhost:3000`. Caso não ocorra, basta abrir manualmente uma janela e colocar o endereço em questão.*_
 
 ### Componentes e métodos
+Obs.: Para a criação deste projeto foi usado o template disponibilizado pela Back4App especialmente para o uso do Parse. [Template](https://www.back4app.com/docs/react/react-templates)
+
 Os arquivos principais são 4: `App.js`, `SearchQuery.js`, `ViewQuery.js` e `Header.js` dentro deles estão resididos os componentes e métodos principais.
 
 #### `Header.js`
-Este arquivo contém apenas um `function component` declarado ArrowFunction, ele não recebe nenhum parâmetro e retorna um conjunto de marcações HTLM formando o cabeçalho da página.
+Este arquivo contém apenas um `function component` declarado por  ArrowFunction, ele não recebe nenhum parâmetro e retorna um conjunto de marcações HTLM formando o cabeçalho da página.
 
 ```javascript
     const Header = () => {
@@ -157,9 +159,9 @@ Aqui acontece a parte principal do sistema, por meio do componente `SearchQuery`
 ```
 
 #### `ViewQuery.js`
-Neste arquivo existe o componente `ViewQuery` e um `function component` chamado *`View`*. Eles que tratam da conversão de cada objeto da pesquisa em um card devidamente formatado (HTML) e estilizado (Materialize.css e CSS puro).
+Neste arquivo existem o componente `ViewQuery` e um `function component` chamado *`View`*. Eles que tratam da conversão de cada objeto da pesquisa em um card devidamente formatado (HTML) e estilizado ([Materialize.css](https://materializecss.com/) e CSS puro).
 
-* O `fucntion component` chamado `View` recebe o parâmetro `props` que contém o `state` do componente `SearchQuery` que foi enviado como parâmetro na chamada do mesmo. O código aplica as regras de negócio requisitadas e "converte" os resultados da comparação do parâmetro `search` das `props` com o parâmetro `nome` de cada `professor` no array de professores em cards estruturados e estilizados.
+* O `function component` chamado `View` recebe o parâmetro `props` que contém o `state` do componente `SearchQuery` que foi enviado como parâmetro na chamada do mesmo. O código aplica as regras de negócio requisitadas e "converte" os resultados da comparação do parâmetro `search` das `props` com o parâmetro `nome` de cada `professor` no array de professores em cards estruturados e estilizados.
 
 ```Node
     const View = (props) => {
@@ -221,8 +223,81 @@ Neste arquivo existe o componente `ViewQuery` e um `function component` chamado 
     }
 }
 ```
-<!-- ```javascript
-const store = createStore(reducer);
-function reducer(state = [], action)
-{ return 'x' };
-``` -->
+
+### Testes
+O App possui quatro testes simples de renderização, estes encontram-se na pasta `__tests__` no diretório raiz do projeto.
+Os testes foram desenvolvidos com as bibliotecas [Jest](https://jestjs.io/) (criada pelo Facebook) e [Enzyme](https://enzymejs.github.io/enzyme/) (criada pelo AirBnB).
+
+#### Rodar os testes
+É possível rodar os testes de forma automática por meio do comando no console:
+`npm test`
+>Após alguns segundos o feedback dos testes é exibido no console.
+
+###### O principal intuito dos testes é verificar se o componente está renderizando o seu conteúdo completamente e sem erros.
+
+#### `App.test.js`
+```Node
+import React from 'react';
+import { shallow } from 'enzyme';
+import App from '../src/App';
+
+describe('Testing App Component', () => {
+    it('should render correctly', () => {
+        const wrapper = shallow(
+            <App />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+});
+```
+
+#### `Header.test.js`
+```Node
+import React from 'react';
+import { shallow } from 'enzyme';
+import Header from '../src/Header';
+
+describe('Testing Header Component', () => {
+    it('should render correctly', () => {
+        const wrapper = shallow(
+            <Header />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+});
+```
+
+#### `SearchQuery.test.js`
+```Node
+import React from 'react';
+import { render } from 'enzyme';
+import SearchQuery from '../src/SearchQuery';
+
+describe('Testing SearchQuery component', () => {
+    it('Should render SearchQuery input correctly', () => {
+        render(<SearchQuery onChange={() => {}}/>);
+    });
+});
+```
+
+#### `ViewQuery.test.js`
+```Node
+import React from 'react';
+import { shallow } from 'enzyme';
+import ViewQuery from '../src/ViewQuery';
+
+describe('Testing ViewQuery Component', () => {
+    it('should render correctly', () => {
+        const wrapper = shallow(
+            <ViewQuery />
+        );
+
+        expect(wrapper).toMatchSnapshot();
+    });
+});
+```
+
+---
+*_Desenvolvido por Samuel da Silva Rocha_*
