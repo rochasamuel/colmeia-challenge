@@ -16,6 +16,10 @@ Para visualizar o projeto em funcionamento é necessário ter o Node.js instalad
 
   `cd C:..\colmeia-challenge`
 
+* Execute o comando (instala as dependências do projeto):
+  
+  `npm install`
+
 * Execute o comando: (roda o app em modo de desenvolvimento)
 
   `npm start`
@@ -26,7 +30,19 @@ Para visualizar o projeto em funcionamento é necessário ter o Node.js instalad
   
   `>react-scripts start`
 
+  *E depois:*
 
+  ```Node
+    Compiled successfully!
+
+    You can now view react-quickstart-example in the browser.
+
+    Local:            http://localhost:3000/
+    On Your Network:  http://255.255.255.255:3000/
+
+    Note that the development build is not optimized.
+    To create a production build, use npm run build.
+  ```
 
 >_*O navegador deverá abrir uma janela automaticamente direcionando para o endereço `localhost:3000`. Caso não ocorra, basta abrir manualmente uma janela e colocar o endereço em questão.*_
 
